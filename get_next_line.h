@@ -6,20 +6,31 @@
 /*   By: ouel-maj <ouel-maj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/29 18:08:35 by ouel-maj          #+#    #+#             */
-/*   Updated: 2023/01/10 11:52:42 by ouel-maj         ###   ########.fr       */
+/*   Updated: 2023/02/08 19:30:32 by ouel-maj         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ouel-maj <ouel-maj@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/29 18:08:35 by ouel-maj          #+#    #+#             */
+/*   Updated: 2023/01/16 13:16:26 by ouel-maj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 4
 # endif
 
 size_t	ft_strlen(const char *s);
@@ -29,4 +40,5 @@ char	*extract_line(char *line_in);
 char	*clean_up(char *line_in);
 char	*get_next_line(int fd);
 int		search_newline(char *s);
+void	*cleanup_while(char *line_in, char *cleaned_line, int len);
 #endif
